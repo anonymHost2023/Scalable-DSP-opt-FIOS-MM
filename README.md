@@ -1,4 +1,6 @@
-# Results
+This repository contains the sources, verification systems and implementation utilities for the hardware described in the HOST 2023 submission [Scalable DSP optimized Montgomery Multiplier](./Scalable_DSP_optimized_Montgomery_Multiplier.pdf).
+
+# FIOS Montgomery Multiplier Implementation Results
 
 Below are the lastest implementation results on a Zynq+ FPGA (ZCU104 platform, part xczu7ev-ffvc1156-2-e).
 
@@ -33,7 +35,7 @@ Vivado -mode batch -source TCL/sim_project_gen.tcl
 
 This project will load the design, its testbench and test vectors stored in the `TXT` subfolder. 
 Users can run simulations using these test vectors for sizes of operands (128, 256, 512, 1024, 2048, 4096).
-Operand width can be modified using the `WIDTH` parameter of the testbench and my modifying the generic `WIDTH` parameter of the
+Operand width can be modified using the `WIDTH` parameter of the testbench and by modifying the generic `WIDTH` parameter of the
 `top_v_wrapper` module in the block design.
 
 ## FIOS_impl
