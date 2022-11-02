@@ -55,31 +55,21 @@ if __name__ == "__main__":
 
 	# Running this file will test one random set of inputs fed to the FIOS function
 
-	n = random_prime(2**256, False, 2**255)
+	WIDTH = 256
+
+	n = random_prime(2**WIDTH, False, 2**(WIDTH-1))
 	
-	print("WIDTH : 256")
+	print("WIDTH : ", WIDTH)
 	
-	a = random.randrange(2**255, n)
-	b = random.randrange(2**255, n)
+	a = random.randrange(2**(WIDTH-1), n)
+	b = random.randrange(2**(WIDTH-1), n)
 	
 
-	WIDTH = 512 + 2
+	WIDTH = WIDTH + 2
 
 	w = 17
 	
 	s = (WIDTH-1)//w + 1
-	
-#	n = 0x8cba21028152e595b8b01793ee84472585f0a543fa7de85a68c0c1b8db9fe639
-#	a = 0x861316b423dc404e760dbb19bfd42a1828552113f567ee2c01a9b18a91d25da3
-#	b = 0x8517a54436cc17d87f7adeee5b301c8e7d1a62df1c648a6fcee73d9fec912be8
-
-#	n = 0xeee1ed40a843211b8b0a65ef4ae90150f3c56dc69928ce09be3cd7623563ac29
-#	a = 0xc0b4849d498ac5c15685e0633c0d9936c255a02cb1264c97459d68e5ad64fdab
-#	b = 0x8579e8fa6c923c4d3c132c133ccad0d4ec1efb675366fa827af8b5a1e5290fef	
-
-	n = 0xcc32472162d40712025af5ba22d1c1f9436188d0eba6a9f42c3efd510c738446becff2f9472e6238ed9aca5a561a28b5cb90c18fdaad800319b22ec3b15aa0e7
-	a = 0xa385d2c24c2d9025202261f1205c24e2263e2d51301efc7015b879696eba7c9e48ee5e63d9d1c0dde4db6074a7aa652bccc6341e1985666654512c72150b9281
-	b = 0xaa33f1c947d83fdce7e52eac032612ff6d45aa442ae743cb98d0fbbc3defe0d82d6a2c58ca18f9f220c5064117f6b8c85bd6373bf530bfd1f4c40d6999087847
 
 	R = 2**(s*w)
 	R_inv = inverse_mod(R, n)
