@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1fs
 
 // This module is the testbench for the sim_top_bd block design.
 // It is meant to load test vectors from a text test vectors file,
@@ -90,6 +90,7 @@ module top_bd_wrapper_tb();
 
     initial begin
     
+        count <= 0;
         reset_i <= 1;
         en_res <= 0;
 
@@ -103,7 +104,7 @@ module top_bd_wrapper_tb();
         
         // While the test vector file has not been read completely, the n, n_prime_0, X and Y operands as
         // well as the expected result are read and tested.
-        while (~$feof(fd)) begin
+        while (! $feof(fd)) begin
         
         reset_i <= 1;
         en_res <= 0;
@@ -200,6 +201,7 @@ module top_bd_wrapper_tb();
 
 
 endmodule
+
 
 
 
