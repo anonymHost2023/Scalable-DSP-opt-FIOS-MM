@@ -1,4 +1,4 @@
-This repository contains the sources, verification systems and implementation utilities for the hardware described in the HOST 2023 submission [Scalable DSP optimized Montgomery Multiplier](./Scalable_DSP_optimized_Montgomery_Multiplier.pdf).
+This repository contains the sources, verification systems and implementation utilities for the hardware described in the HOST 2023 submission [Scalable DSP optimized Montgomery Multiplier](./Scalable_DSP_optimized_Montgomery_Multiplier.pdf). The hardware has been developed using Vivado 2022.1.
 
 # FIOS Montgomery Multiplier Implementation Results
 
@@ -20,7 +20,7 @@ Below are the lastest implementation results on a Zynq+ FPGA (ZCU104 platform, p
 # Verification
 
 Verification utilities for the design are available in the `VERIFICATION` folder.
-Test vectors can be generated using [sagemath toolchain](https://www.sagemath.org/) and the `gen_test_vectors.sage` script (see `sage gen_test_vectors.sage -h` for help).
+Test vectors can be generated using the [sagemath toolchain](https://www.sagemath.org/) and the `gen_test_vectors.sage` script (see `sage gen_test_vectors.sage -h` for help).
 Test vectors stored in the TXT subfolder are imported to the simulation project of the design by default.
 
 # Generating Projects
