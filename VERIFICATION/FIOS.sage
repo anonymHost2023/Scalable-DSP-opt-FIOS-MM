@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
 	verif = a*b*R_inv % n
 
-	res_arr = FIOS(n, a, b, w, WIDTH = 512)[0]
+	res_arr = FIOS(n, a, b, w, WIDTH = WIDTH)[0]
 
 	res = 0
 	for i in range(len(res_arr)):
