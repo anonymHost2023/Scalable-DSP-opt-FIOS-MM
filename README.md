@@ -30,7 +30,7 @@ Test vectors stored in the TXT subfolder are imported to the simulation project 
 A generation script for the simulation project is available in the `TCL` folder and can be run using
 
 ```
-Vivado -mode batch -source TCL/sim_project_gen.tcl
+vivado -mode batch -source TCL/sim_project_gen.tcl
 ```
 
 This project will load the design, its testbench and test vectors stored in the `TXT` subfolder. 
@@ -43,7 +43,7 @@ Operand width can be modified using the `WIDTH` parameter of the testbench and b
 A generation script for the implementation project is available in the `TCL` folder and can be run using
 
 ```
-Vivado -mode batch -source TCL/sim_project_gen.tcl
+vivado -mode batch -source TCL/impl_project_gen.tcl
 ```
 
 This project will load the design sources, create the implementation block design and link the design to the Zynq SoC.
