@@ -1,21 +1,21 @@
-This repository contains the sources, verification systems and implementation utilities for the hardware described in the HOST 2023 submission [Scalable DSP optimized Montgomery Multiplier](./Scalable_DSP_optimized_Montgomery_Multiplier.pdf).
+This repository contains the sources, verification systems and implementation utilities for the hardware described in the HOST 2023 submission Scalable DSP optimized Montgomery Multiplier.
 
 # FIOS Montgomery Multiplier Implementation Results
 
-Below are the lastest implementation results on a Zynq+ FPGA (ZCU104 platform, part xczu7ev-ffvc1156-2-e).
+Below are the lastest implementation results on a Zynq Ultrascale+ FPGA (ZCU102 platform, part xczu9eg-ffvb1156-2-e).
 
 | WIDTH | Max Freq (MHz) | Latency | time (mus) | DSP | LUT | AT[^1] |
 |-------|----------------|---------|------------|-----|-----|---- |
-|128    |700             |84       |0.12        |3    |555  |115  |
-|256    |700             |172      |0.246       |5    |902  |386  |
-|512    |700             |337      |0.481       |8    |1443 |1206 |
-|1024   |700             |667      |0.953       |15   |2653 |4423 |
-|2048   |700             |1327     |1.90        |28   |4985 |16548|
-|4096   |600             |2658     |4.43        |55   |9341 |73787|
+|128    |700             |84       |0.12        |3    |559  |106  |
+|256    |700             |172      |0.246       |5    |900  |355  |
+|512    |700             |337      |0.481       |8    |1428 |1103 |
+|1024   |700             |667      |0.953       |15   |2634 |4055 |
+|2048   |700             |1327     |1.90        |28   |4950 |15151|
+|4096   |675             |2658     |3.94        |55   |9814 |62071|
 
 [^1]: Area Time product is computed as the product of the total equivalent LUT cost by the execution time.
   It is a measure of the efficiency of the system (the lower the better).
-  The equivalent LUT cost of a DSP block is computed as $LUT_{eq} = \dfrac{LUT_{tot}}{DSP{tot}} = \dfrac{230400}{1728} = 133$
+  The equivalent LUT cost of a DSP block is computed as $LUT_{eq} = \dfrac{LUT_{tot}}{DSP{tot}} = \dfrac{274080}{2520} = 108$
 
 # Verification
 

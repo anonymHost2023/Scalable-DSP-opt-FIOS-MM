@@ -19,8 +19,8 @@ variable project_name
 set project_name "FIOS_impl"
 
 # Create project and set the FPGA target.
-create_project -force ${project_name} "${root_folder}/${project_name}" -part xczu7ev-ffvc1156-2-e
-set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
+create_project -force ${project_name} "${root_folder}/${project_name}" -part xczu9eg-ffvb1156-2-e
+set_property BOARD_PART xilinx.com:zcu102:part0:3.4 [current_project]
 
 # Import design sources.
 add_files -fileset sources_1 "${root_folder}/SRC/RTL"
@@ -50,3 +50,6 @@ set_property synth_checkpoint_mode None [get_files  "${root_folder}/${project_na
 
 # Sets implementation Strategy to Performance_ExploreWithRemap.
 set_property strategy Performance_ExploreWithRemap [get_runs impl_1]
+
+launch_runs impl1 -jobs 4
+wait_on_runs impl1

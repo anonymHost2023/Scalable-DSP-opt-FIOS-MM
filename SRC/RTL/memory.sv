@@ -97,25 +97,25 @@ module memory #(parameter int s = 16,
 
 
     // Writes to the registers must be delayed in order to synchronize them with BRAM output data.
-    delay_line #(.WIDTH(1), .DELAY(3)) X_reg_write_dly_inst (
+    delay_line #(.WIDTH(1), .DELAY(2)) X_reg_write_dly_inst (
         .clock_i(clock_i), .reset_i(reset_i), .en_i(1'b1),
         .data_i(X_reg_write),
         .data_o(X_reg_write_dly)
     );
     
-    delay_line #(.WIDTH(1), .DELAY(3)) n_prime_0_reg_en_dly_inst (
+    delay_line #(.WIDTH(1), .DELAY(2)) n_prime_0_reg_en_dly_inst (
         .clock_i(clock_i), .reset_i(reset_i), .en_i(1'b1),
         .data_i(n_prime_0_reg_en),
         .data_o(n_prime_0_reg_en_dly)
     );
     
-    delay_line #(.WIDTH(1), .DELAY(3)) n_reg_write_dly_inst (
+    delay_line #(.WIDTH(1), .DELAY(2)) n_reg_write_dly_inst (
         .clock_i(clock_i), .reset_i(reset_i), .en_i(1'b1),
         .data_i(n_reg_write),
         .data_o(n_reg_write_dly)
     );
     
-    delay_line #(.WIDTH(1), .DELAY(3)) Y_reg_write_dly_inst (
+    delay_line #(.WIDTH(1), .DELAY(2)) Y_reg_write_dly_inst (
         .clock_i(clock_i), .reset_i(reset_i), .en_i(1'b1),
         .data_i(Y_reg_write),
         .data_o(Y_reg_write_dly)
