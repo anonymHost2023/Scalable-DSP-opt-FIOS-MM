@@ -33,7 +33,7 @@ A generation script for the simulation project is available in the `TCL` folder 
 vivado -mode batch -source TCL/sim_project_gen.tcl
 ```
 
-This project will load the design, its testbench and test vectors stored in the `TXT` subfolder. 
+This script will load the design, its testbench and test vectors stored in the `TXT` subfolder. 
 Users can run simulations using these test vectors for sizes of operands (128, 256, 512, 1024, 2048, 4096).
 Operand width can be modified using the `WIDTH` parameter of the testbench and by modifying the generic `WIDTH` parameter of the
 `top_v_wrapper` module in the block design.
@@ -46,10 +46,19 @@ A generation script for the implementation project is available in the `TCL` fol
 vivado -mode batch -source TCL/impl_project_gen.tcl
 ```
 
-This project will load the design sources, create the implementation block design and link the design to the Zynq SoC.
+This script will load the design sources, create the implementation block design and link the design to the Zynq SoC.
+It will also generate a bitstream for the project (which might take a few minutes) and the .xsa hardware definition file used in the Vitis codesign project.
 Implementation strategies will be set to `Performance_ExploreWithRemap`.
 Operand width can be modified using the generic `WIDTH` parameter of the
 `top_v_wrapper` module in the block design. Implementation clock frequency can be modified using the output clock properties of
 the `clock wizard` module in the block design.
 
+## Vitis project
 
+A generation script for a Vitis codesign project is available in the `TCL` folder and can be run using
+
+```
+xsct TCL/vitis_FIOS_256_gen.tcl
+```
+
+This script will create a new vitis workspace, generate a platform for the ZCU102 board using the previously generated .xsa file and generate a codesign application used to test a 256 bits FIOS Montgomery multiplication directly on the board.

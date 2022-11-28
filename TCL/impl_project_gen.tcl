@@ -51,5 +51,6 @@ set_property synth_checkpoint_mode None [get_files  "${root_folder}/${project_na
 # Sets implementation Strategy to Performance_ExploreWithRemap.
 set_property strategy Performance_ExploreWithRemap [get_runs impl_1]
 
-launch_runs impl1 -jobs 4
-wait_on_runs impl1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file "${root_folder}/FIOS_impl/impl_top_bd_wrapper.xsa"
