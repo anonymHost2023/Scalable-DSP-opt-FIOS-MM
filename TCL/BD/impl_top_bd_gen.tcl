@@ -249,13 +249,8 @@ proc create_root_design { parentCell } {
   # Create instance: blk_mem_gen_0, and set properties
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
   set_property -dict [ list \
-   CONFIG.Assume_Synchronous_Clk {true} \
-   CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_B {Use_ENB_Pin} \
    CONFIG.Memory_Type {True_Dual_Port_RAM} \
-   CONFIG.Operating_Mode_A {NO_CHANGE} \
-   CONFIG.Operating_Mode_B {NO_CHANGE} \
-   CONFIG.PRIM_type_to_Implement {AUTO} \
    CONFIG.Port_B_Clock {100} \
    CONFIG.Port_B_Enable_Rate {100} \
    CONFIG.Port_B_Write_Rate {50} \
@@ -311,7 +306,10 @@ proc create_root_design { parentCell } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.WIDTH {256} \
+ ] $top_v_wrapper_0
+
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_HIGH} \
  ] [get_bd_pins /top_v_wrapper_0/reset_i]

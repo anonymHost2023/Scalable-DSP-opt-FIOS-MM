@@ -27,7 +27,8 @@ domain active {standalone_psu_cortexa53_0}
 platform generate
 
 app create -name FIOS_256 -platform {impl_top_bd_wrapper} -domain {standalone_psu_cortexa53_0} -template {Hello World}
-app build -name FIOS_256
 
 file delete "${root_folder}/vitis_workspace/FIOS_256/src/helloworld.c"
 importsource -name FIOS_256 -path "${root_folder}/SRC/VITIS/FIOS_256.c"
+
+app build -name FIOS_256
