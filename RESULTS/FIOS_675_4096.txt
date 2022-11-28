@@ -2,7 +2,7 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1.2 (lin64) Build 3605665 Fri Aug  5 22:52:02 MDT 2022
 | Date         : Mon Nov 28 17:03:50 2022
-| Host         : GCP-PCP-NOYEZ running 64-bit Ubuntu 20.04.5 LTS
+| Host         : ANONYM running 64-bit Ubuntu 20.04.5 LTS
 | Command      : report_utilization -cells impl_top_bd_i/top_v_wrapper_0/inst/top_inst/FIOS_inst -file ./RESULTS/FIOS_675_4096.txt
 | Design       : impl_top_bd_wrapper
 | Device       : xczu9eg-ffvb1156-2-e
