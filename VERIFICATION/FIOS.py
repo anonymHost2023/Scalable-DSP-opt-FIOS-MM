@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
 	verif = a*b*R_inv % n
 
-	res_arr = FIOS(n, a, b, w, WIDTH = _sage_const_512 )[_sage_const_0 ]
+	res_arr = FIOS(n, a, b, w, WIDTH = WIDTH )[_sage_const_0 ]
 
 	res = _sage_const_0 
 	for i in range(len(res_arr)):
