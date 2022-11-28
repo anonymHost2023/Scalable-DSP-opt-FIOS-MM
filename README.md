@@ -1,5 +1,3 @@
-This repository contains the sources, verification systems and implementation utilities for the hardware described in the HOST 2023 submission Scalable DSP optimized Montgomery Multiplier.
-=======
 This repository contains the sources, verification systems and implementation utilities for the hardware described in the HOST 2023 submission Scalable DSP optimized Montgomery Multiplier. The hardware has been developed using Vivado 2022.1.
 
 # FIOS Montgomery Multiplier Implementation Results
