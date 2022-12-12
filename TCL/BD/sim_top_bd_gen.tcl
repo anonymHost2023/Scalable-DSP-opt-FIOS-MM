@@ -263,7 +263,7 @@ proc create_root_design { parentCell } {
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
    CONFIG.AUTO_PRIMITIVE {PLL} \
-   CONFIG.CLKOUT1_DRIVES {BUFGCE} \
+   CONFIG.CLKOUT1_DRIVES {Buffer} \
    CONFIG.CLKOUT1_JITTER {71.133} \
    CONFIG.CLKOUT1_PHASE_ERROR {79.592} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {700} \
@@ -282,7 +282,7 @@ proc create_root_design { parentCell } {
    CONFIG.PRIMITIVE {Auto} \
    CONFIG.USE_LOCKED {false} \
    CONFIG.USE_RESET {false} \
-   CONFIG.USE_SAFE_CLOCK_STARTUP {true} \
+   CONFIG.USE_SAFE_CLOCK_STARTUP {false} \
  ] $clk_wiz_0
 
   # Create instance: proc_sys_reset_0, and set properties

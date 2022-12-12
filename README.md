@@ -3,15 +3,22 @@ This repository contains the sources, verification systems and implementation ut
 # FIOS Montgomery Multiplier Implementation Results
 
 Below are the lastest implementation results on a Zynq Ultrascale+ FPGA (ZCU102 platform, part xczu9eg-ffvb1156-2-e).
+Note that the 738 MHz maximum frequency of designs using bit width ranging from 128 to 2048 bits is the maximum operating
+frequency of BRAM blocks used on the xczu9eg-ffvb1156-2-e FPGA part (speed grade -2). Although the FIOS multiplier can
+technically run at a slightly higher frequency (up to the 775 MHz maximum frequency of DSP blocks), it is the limit of
+the current design methodology since one BRAM block is used as a clock domain crossing element in the implementation design
+which has the Zynq+ System on Chip communicate with the FPGA FIOS accelerator.
 
-| WIDTH | Max Freq (MHz) | Latency | time (mus) | DSP | LUT | AT[^1] |
-|-------|----------------|---------|------------|-----|-----|---- |
-|128    |700             |84       |0.12        |3    |559  |106  |
-|256    |700             |172      |0.246       |5    |900  |355  |
-|512    |700             |337      |0.481       |8    |1428 |1103 |
-|1024   |700             |667      |0.953       |15   |2634 |4055 |
-|2048   |700             |1327     |1.90        |28   |4950 |15151|
-|4096   |675             |2658     |3.94        |55   |9814 |62071|
+
+| WIDTH | Max Freq (MHz) | Latency | time (mu s) | DSP | LUT | AT[^1] |
+|-------|----------------|---------|-------------|-----|-----|--------|
+|128    |738             |84       |0.114        |3    |583  |103     |
+|256    |738             |172      |0.233        |5    |934  |343     |
+|512    |738             |337      |0.457        |8    |1470 |1066    |
+|1024   |738             |667      |0.904        |15   |2735 |3936    |
+|2048   |738             |1327     |1.80         |28   |5025 |14473   |
+|4096   |712.5           |2658     |3.73         |55   |9774 |58621   |
+
 
 [^1]: Area Time product is computed as the product of the total equivalent LUT cost by the execution time.
   It is a measure of the efficiency of the system (the lower the better).
